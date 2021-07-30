@@ -37,10 +37,10 @@ class MailConnection:
                 self.email_items = sd.encode()
         if sub_folder is None:
             if subject:
-                self.connections.select('{}/'.format(folder))
+                self.connections.select('{}'.format(folder))
                 self.rks, self.email_items = self.connections.search(None,'(SUBJECT "{}")'.format(subject))
             if subject is None:
-                self.rks, email_items = self.connections.select('{}/'.format(folder))
+                self.rks, email_items = self.connections.select('{}'.format(folder))
                 lst = []
                 for i in range(1,int(email_items[0])):
                     lst.append(i)
